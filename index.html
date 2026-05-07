@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story Homes | Sell Your Property As-Is On Your Terms</title>
+  <meta name="description"
+    content="Get a fair, no-obligation offer on your California property. No repairs, no agent fees, no uncertainty." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="app-shell">
+
+    <!-- ── Header ── -->
+    <header class="app-header" id="app-header">
+      <a class="logo-link" href="#" aria-label="Story Homes">
+        <img src="Story-logo.webp" alt="Story Homes" class="logo" />
+      </a>
+
+      <div class="progress-wrap" id="progress-wrap" aria-hidden="true">
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="progress-label" id="progress-label">Step 1 of 4</span>
+      </div>
+
+      <!-- Nav links: visible on hero, hidden during form steps -->
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#why-story-homes" class="nav-link">Compare</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <a href="#get-started" class="nav-link nav-link--cta">Next Steps</a>
+
+      <button class="btn-header-cta" id="btn-header-cta">
+        Get Started
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <button class="theme-btn" id="theme-btn" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+    </header>
+
+    <!-- ── Steps ── -->
+    <main class="steps-viewport" id="steps-viewport">
+
+      <!-- Step 1: Hero -->
+      <section class="step active" id="step-1" role="main" aria-label="Get started">
+
+        <!-- Full-screen background video -->
+        <div class="hero-bg" aria-hidden="true">
+          <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="Compilation_1.mp4" type="video/mp4">
+          </video>
+          <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Centered content over video -->
+        <div class="hero-content">
+          <p class="eyebrow">California property owners</p>
+          <h1 class="hero-headline">List Your Property <em>on your&nbsp;<span class="rw-outer"><span class="rw"
+                  id="rotating-word">terms.</span></span></em></h1>
+          <p class="hero-sub">No repairs. No agent fees. No complicated contracts.<br class="br-desk">A simple,
+            stress-free path forward.</p>
+
+          <div class="offer-callout" role="note" aria-label="Offer timeline">
+            <div class="oc-icon" aria-hidden="true">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="oc-body">
+              <strong>Receive your offer within 24 to 48 hours</strong>
+              <span>No commitment required &middot; Takes two minutes</span>
+            </div>
+          </div>
+
+          <ul class="value-list" aria-label="Key benefits">
+            <li>
+              <span class="vl-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </span>
+              Sell As-Is. No repairs or updates required.
+            </li>
+            <li>
+              <span class="vl-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                </svg>
+              </span>
+              No Agent Fees or Closing Costs.
+            </li>
+            <li>
+              <span class="vl-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </span>
+              Flexible Closing Dates. On your schedule.
+            </li>
+            <li>
+              <span class="vl-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                  <path d="M16 3.13a4 4 0 010 7.75" />
+                </svg>
+              </span>
+              Real Cash Offers From Real Investors.
+            </li>
+          </ul>
+
+          <div class="hero-cta-row">
+            <button class="btn-primary btn-start" id="btn-start">
+              Get My Fair Offer
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <a href="#reviews" class="btn-ghost-hero">
+              What People Are Saying
+            </a>
+          </div>
+        </div>
+
+        <!-- Subtle scroll hint -->
+        <button class="hero-scroll-hint" aria-label="Scroll to learn more"
+          onclick="document.getElementById('marketing-sections').scrollIntoView({behavior:'smooth'})">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+
+      </section>
+
+      <!-- Step 2: Address -->
+      <section class="step" id="step-2" aria-label="Property address">
+        <div class="step-inner">
+          <div class="step-card">
+            <div class="step-head">
+              <h2>Where is your property?</h2>
+              <p>We use this to prepare an accurate, fair offer.</p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="street-address">Street Address</label>
+              <div class="autocomplete-wrap">
+                <input type="text" id="street-address" class="field-input" placeholder="Start typing your address..."
+                  autocomplete="off" aria-autocomplete="list" aria-controls="ac-dropdown" />
+                <ul class="ac-dropdown" id="ac-dropdown" role="listbox" aria-label="Address suggestions"></ul>
+              </div>
+              <span class="field-error" id="err-street"></span>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group grow-2">
+                <label class="field-label" for="city">City</label>
+                <input type="text" id="city" class="field-input" placeholder="City" />
+                <span class="field-error" id="err-city"></span>
+              </div>
+              <div class="field-group grow-1 locked-field">
+                <label class="field-label" for="state">State</label>
+                <input type="text" id="state" class="field-input" value="California" readonly tabindex="-1" />
+              </div>
+              <div class="field-group grow-1">
+                <label class="field-label" for="zip">ZIP</label>
+                <input type="text" id="zip" class="field-input" placeholder="90210" inputmode="numeric" maxlength="5" />
+                <span class="field-error" id="err-zip"></span>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-back" data-goto="1">Back</button>
+              <button class="btn-primary" id="btn-step2">
+                Continue
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 3: Property Details -->
+      <section class="step" id="step-3" aria-label="Property details">
+        <div class="step-inner step-inner--scroll">
+          <div class="step-card step-card--wide">
+            <div class="step-head">
+              <h2>Tell us about your property.</h2>
+              <p>A few quick details help us prepare your offer.</p>
+            </div>
+
+            <!-- Property Type -->
+            <div class="question-block">
+              <p class="question-label" id="ql-type">Property type</p>
+              <div class="card-grid cols-3" role="group" aria-labelledby="ql-type">
+                <button class="sel-card" data-group="property_type" data-value="Single Family">
+                  <span class="sc-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                      <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                  </span>
+                  <span class="sc-label">Single Family</span>
+                </button>
+                <button class="sel-card" data-group="property_type" data-value="Condo / Townhome">
+                  <span class="sc-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="18" rx="2" />
+                      <line x1="9" y1="3" x2="9" y2="21" />
+                      <line x1="15" y1="3" x2="15" y2="21" />
+                      <line x1="2" y1="9" x2="22" y2="9" />
+                      <line x1="2" y1="15" x2="22" y2="15" />
+                    </svg>
+                  </span>
+                  <span class="sc-label">Condo / Townhome</span>
+                </button>
+                <button class="sel-card" data-group="property_type" data-value="Multi-Family">
+                  <span class="sc-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 22V8l7-5 7 5v14M15 22V11l4-3 4 3v11" />
+                      <line x1="1" y1="22" x2="23" y2="22" />
+                    </svg>
+                  </span>
+                  <span class="sc-label">Multi-Family</span>
+                </button>
+                <button class="sel-card" data-group="property_type" data-value="Mobile Home">
+                  <span class="sc-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="1" y="8" width="22" height="12" rx="2" />
+                      <path d="M7 8V6a1 1 0 011-1h8a1 1 0 011 1v2" />
+                      <circle cx="7" cy="22" r="2" />
+                      <circle cx="17" cy="22" r="2" />
+                    </svg>
+                  </span>
+                  <span class="sc-label">Mobile Home</span>
+                </button>
+                <button class="sel-card" data-group="property_type" data-value="Land">
+                  <span class="sc-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 21L12 4l9 17H3z" />
+                      <path d="M3 21h18" />
+                    </svg>
+                  </span>
+                  <span class="sc-label">Land</span>
+                </button>
+                <button class="sel-card" data-group="property_type" data-value="Other">
+                  <span class="sc-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                  </span>
+                  <span class="sc-label">Other</span>
+                </button>
+              </div>
+              <span class="field-error" id="err-type"></span>
+            </div>
+
+            <!-- Condition -->
+            <div class="question-block">
+              <p class="question-label" id="ql-cond">Current condition</p>
+              <div class="card-grid cols-2" role="group" aria-labelledby="ql-cond">
+                <button class="sel-card sel-card--wide" data-group="condition" data-value="Move-in Ready">
+                  <span class="sc-label">Move-in Ready</span>
+                  <span class="sc-sub">Great shape, no major issues</span>
+                </button>
+                <button class="sel-card sel-card--wide" data-group="condition" data-value="Minor Repairs Needed">
+                  <span class="sc-label">Minor Repairs</span>
+                  <span class="sc-sub">Cosmetic or small updates needed</span>
+                </button>
+                <button class="sel-card sel-card--wide" data-group="condition" data-value="Significant Work Needed">
+                  <span class="sc-label">Significant Work</span>
+                  <span class="sc-sub">Major repairs or renovations</span>
+                </button>
+                <button class="sel-card sel-card--wide" data-group="condition" data-value="Major Distress">
+                  <span class="sc-label">Major Distress</span>
+                  <span class="sc-sub">Fire, flood, or severe damage</span>
+                </button>
+              </div>
+              <span class="field-error" id="err-cond"></span>
+            </div>
+
+            <!-- Occupancy -->
+            <div class="question-block">
+              <p class="question-label" id="ql-occ">Who currently occupies the property?</p>
+              <div class="card-grid cols-3" role="group" aria-labelledby="ql-occ">
+                <button class="sel-card" data-group="occupancy" data-value="Owner Occupied">
+                  <span class="sc-label">Owner Occupied</span>
+                </button>
+                <button class="sel-card" data-group="occupancy" data-value="Tenant Occupied">
+                  <span class="sc-label">Tenant Occupied</span>
+                </button>
+                <button class="sel-card" data-group="occupancy" data-value="Vacant">
+                  <span class="sc-label">Vacant</span>
+                </button>
+              </div>
+              <span class="field-error" id="err-occ"></span>
+            </div>
+
+            <!-- Timeline -->
+            <div class="question-block">
+              <p class="question-label" id="ql-time">When are you hoping to sell?</p>
+              <div class="card-grid cols-2" role="group" aria-labelledby="ql-time">
+                <button class="sel-card" data-group="timeline" data-value="As Soon as Possible">
+                  <span class="sc-label">As soon as possible</span>
+                </button>
+                <button class="sel-card" data-group="timeline" data-value="1 to 3 Months">
+                  <span class="sc-label">1 to 3 months</span>
+                </button>
+                <button class="sel-card" data-group="timeline" data-value="3 to 6 Months">
+                  <span class="sc-label">3 to 6 months</span>
+                </button>
+                <button class="sel-card" data-group="timeline" data-value="Flexible or Undecided">
+                  <span class="sc-label">Flexible or undecided</span>
+                </button>
+              </div>
+              <span class="field-error" id="err-time"></span>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-back" data-goto="2">Back</button>
+              <button class="btn-primary" id="btn-step3">
+                Continue
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 4: Contact -->
+      <section class="step" id="step-4" aria-label="Contact information">
+        <div class="step-inner">
+          <div class="step-card">
+            <div class="step-head">
+              <h2>Where should we send your offer?</h2>
+              <p>A Story Homes advisor will reach out to confirm details and share your offer.</p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="full-name">Full Name</label>
+              <input type="text" id="full-name" class="field-input" placeholder="Your full name" autocomplete="name" />
+              <span class="field-error" id="err-name"></span>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="email">Email Address</label>
+              <input type="email" id="email" class="field-input" placeholder="you@example.com" autocomplete="email" />
+              <span class="field-error" id="err-email"></span>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="field-input" placeholder="(555) 000-0000" autocomplete="tel"
+                inputmode="tel" />
+              <span class="field-error" id="err-phone"></span>
+            </div>
+
+            <div class="trust-row">
+              <div class="trust-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Your information is private and never sold
+              </div>
+              <div class="trust-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                No obligation to accept any offer
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-back" data-goto="3">Back</button>
+              <button class="btn-primary btn-submit" id="btn-submit">
+                <span class="btn-label">Submit My Request</span>
+                <span class="btn-spinner" aria-hidden="true">
+                  <svg class="spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round">
+                    <path
+                      d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
+                  Submitting...
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 5: Confirmation -->
+      <section class="step" id="step-5" aria-label="Confirmation">
+        <div class="step-inner">
+          <div class="step-card confirmation-card">
+            <div class="check-wrap" aria-hidden="true">
+              <svg class="check-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="check-ring" cx="40" cy="40" r="36" stroke-width="2.5" />
+                <polyline class="check-mark" points="24,40 35,51 56,29" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+
+            <h2>We received your request.</h2>
+            <p class="confirmation-sub">A Story Homes advisor will reach out within one business day. There is no
+              pressure and no obligation.</p>
+
+            <div class="next-steps">
+              <div class="ns-item">
+                <div class="ns-num">1</div>
+                <div class="ns-body">
+                  <strong>We review your details</strong>
+                  <span>Our team prepares a fair, research-backed offer for your property.</span>
+                </div>
+              </div>
+              <div class="ns-item">
+                <div class="ns-num">2</div>
+                <div class="ns-body">
+                  <strong>We reach out to you</strong>
+                  <span>A brief, no-pressure conversation to walk through your options.</span>
+                </div>
+              </div>
+              <div class="ns-item">
+                <div class="ns-num">3</div>
+                <div class="ns-body">
+                  <strong>You decide what is right for you</strong>
+                  <span>Accept, decline, or take time. The choice is entirely yours.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main><!-- /steps-viewport -->
+
+    <!-- ─────────────────────────────────────────────
+         Marketing Sections (below the hero)
+         ───────────────────────────────────────────── -->
+    <div class="mkt" id="marketing-sections" aria-label="Learn more about Story Homes">
+
+      <!-- Testimonials -->
+      <section class="mkt-section trust-section" id="reviews">
+        <div class="mkt-inner">
+
+          <div class="mkt-header reveal">
+            <p class="mkt-eyebrow">Trusted by property owners across California</p>
+            <h2 class="mkt-title">What People Are Saying</h2>
+          </div>
+
+          <div class="testimonials-grid">
+
+            <div class="testimonial-card reveal">
+              <div class="tc-quote" aria-hidden="true">
+                <svg width="28" height="22" viewBox="0 0 28 22" fill="currentColor">
+                  <path
+                    d="M0 22V13.5C0 6 3.8 1.6 11.4 0l1.4 2.8C9 4 7.2 6.6 7.2 10.5H12V22H0zm16 0V13.5C16 6 19.8 1.6 27.4 0l1.4 2.8C25 4 23.2 6.6 23.2 10.5H28V22H16z" />
+                </svg>
+              </div>
+              <p class="tc-body">From start to finish, everything went smooth. He stayed on top of everything,
+                communicated well, and made the process easy.</p>
+              <div class="tc-author">
+                <div class="tc-stars" aria-label="5 out of 5 stars">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <span class="tc-name">Manuel Michel</span>
+                <span class="tc-date">2 months ago</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card reveal reveal--delay-1">
+              <div class="tc-quote" aria-hidden="true">
+                <svg width="28" height="22" viewBox="0 0 28 22" fill="currentColor">
+                  <path
+                    d="M0 22V13.5C0 6 3.8 1.6 11.4 0l1.4 2.8C9 4 7.2 6.6 7.2 10.5H12V22H0zm16 0V13.5C16 6 19.8 1.6 27.4 0l1.4 2.8C25 4 23.2 6.6 23.2 10.5H28V22H16z" />
+                </svg>
+              </div>
+              <p class="tc-body">Working with the Story Homes team has been a consistently positive experience. They
+                continue to deliver professionalism and results every time.</p>
+              <div class="tc-author">
+                <div class="tc-stars" aria-label="5 out of 5 stars">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <span class="tc-name">Kristin Santos</span>
+                <span class="tc-date">2 months ago</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card reveal reveal--delay-2">
+              <div class="tc-quote" aria-hidden="true">
+                <svg width="28" height="22" viewBox="0 0 28 22" fill="currentColor">
+                  <path
+                    d="M0 22V13.5C0 6 3.8 1.6 11.4 0l1.4 2.8C9 4 7.2 6.6 7.2 10.5H12V22H0zm16 0V13.5C16 6 19.8 1.6 27.4 0l1.4 2.8C25 4 23.2 6.6 23.2 10.5H28V22H16z" />
+                </svg>
+              </div>
+              <p class="tc-body">It's been a great experience. The team is highly communicative and responsive. There
+                were some challenges along the way and they were there to troubleshoot directly, which ensured
+                efficiency and a smooth close.</p>
+              <div class="tc-author">
+                <div class="tc-stars" aria-label="5 out of 5 stars">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <span class="tc-name">Elizabeth Tao</span>
+                <span class="tc-date">3 months ago</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card reveal reveal--delay-1">
+              <div class="tc-quote" aria-hidden="true">
+                <svg width="28" height="22" viewBox="0 0 28 22" fill="currentColor">
+                  <path
+                    d="M0 22V13.5C0 6 3.8 1.6 11.4 0l1.4 2.8C9 4 7.2 6.6 7.2 10.5H12V22H0zm16 0V13.5C16 6 19.8 1.6 27.4 0l1.4 2.8C25 4 23.2 6.6 23.2 10.5H28V22H16z" />
+                </svg>
+              </div>
+              <p class="tc-body">Jawad was an absolute pleasure to work with. Super hands on, excellent communication
+                and stayed on top of timelines. He had such a great positive vibe no matter the time of day or point in
+                the transaction.</p>
+              <div class="tc-author">
+                <div class="tc-stars" aria-label="5 out of 5 stars">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <span class="tc-name">Monica Felder</span>
+                <span class="tc-date">11 months ago</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card reveal reveal--delay-2">
+              <div class="tc-quote" aria-hidden="true">
+                <svg width="28" height="22" viewBox="0 0 28 22" fill="currentColor">
+                  <path
+                    d="M0 22V13.5C0 6 3.8 1.6 11.4 0l1.4 2.8C9 4 7.2 6.6 7.2 10.5H12V22H0zm16 0V13.5C16 6 19.8 1.6 27.4 0l1.4 2.8C25 4 23.2 6.6 23.2 10.5H28V22H16z" />
+                </svg>
+              </div>
+              <p class="tc-body">Working with Tony was great. He was very attentive to all questions and challenges and
+                answered quickly and promptly, ensuring a smooth process from start to finish.</p>
+              <div class="tc-author">
+                <div class="tc-stars" aria-label="5 out of 5 stars">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <span class="tc-name">Samuel Quinta</span>
+                <span class="tc-date">7 months ago</span>
+              </div>
+            </div>
+
+          </div><!-- /testimonials-grid -->
+
+        </div>
+      </section>
+
+      <!-- Video -->
+      <section class="mkt-section video-section">
+        <div class="mkt-inner">
+
+          <div class="mkt-header reveal">
+            <p class="mkt-eyebrow">See us in action</p>
+            <h2 class="mkt-title">Rewrite Your <span class="accent-brand">Legacy</span></h2>
+          </div>
+
+          <div class="yt-wrap reveal">
+            <video
+              class="local-video"
+              src="Hemet Hillcrest Testimonial_1.mp4"
+              controls
+              preload="metadata"
+              playsinline
+              aria-label="Hemet Hillcrest testimonial — Story Homes"
+            ></video>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Comparison table -->
+      <section class="mkt-section comparison-section" id="why-story-homes">
+        <div class="mkt-inner">
+
+          <div class="mkt-header reveal">
+            <p class="mkt-eyebrow">A clearer path to selling</p>
+            <h2 class="mkt-title">Story Homes vs. Traditional Listings</h2>
+          </div>
+
+          <div class="comp-table reveal">
+
+            <div class="comp-header-row">
+              <div class="comp-cell comp-feature-cell"></div>
+              <div class="comp-cell comp-col-header comp-col-header--us">Story Homes</div>
+              <div class="comp-cell comp-col-header comp-col-header--them">Traditional Listing</div>
+            </div>
+
+            <div class="comp-row">
+              <div class="comp-cell comp-feature-cell">Commissions</div>
+              <div class="comp-cell comp-us-cell comp-val--good">$0</div>
+              <div class="comp-cell comp-them-cell comp-val--bad">5–6%</div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-cell comp-feature-cell">Timeline to close</div>
+              <div class="comp-cell comp-us-cell comp-val--good">7–14 days</div>
+              <div class="comp-cell comp-them-cell comp-val--bad">60–90 days</div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-cell comp-feature-cell">Sell as-is, no repairs needed</div>
+              <div class="comp-cell comp-us-cell"><span class="comp-check" aria-label="Yes"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg></span></div>
+              <div class="comp-cell comp-them-cell"><span class="comp-x" aria-label="No"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg></span></div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-cell comp-feature-cell">Skip showings and open houses</div>
+              <div class="comp-cell comp-us-cell"><span class="comp-check" aria-label="Yes"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg></span></div>
+              <div class="comp-cell comp-them-cell"><span class="comp-x" aria-label="No"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg></span></div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-cell comp-feature-cell">Choose your move-out date</div>
+              <div class="comp-cell comp-us-cell"><span class="comp-check" aria-label="Yes"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg></span></div>
+              <div class="comp-cell comp-them-cell"><span class="comp-x" aria-label="No"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg></span></div>
+            </div>
+            <div class="comp-row">
+              <div class="comp-cell comp-feature-cell">No lenders, no appraisals, just cash</div>
+              <div class="comp-cell comp-us-cell"><span class="comp-check" aria-label="Yes"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg></span></div>
+              <div class="comp-cell comp-them-cell"><span class="comp-x" aria-label="No"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg></span></div>
+            </div>
+
+          </div><!-- /comp-table -->
+
+          <div class="section-cta reveal">
+            <button class="btn-primary" id="btn-comp-cta">
+              Get My Fair Offer
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Building atmosphere -->
+      <section class="mkt-section atm-section" aria-hidden="true">
+        <div class="atm-image-wrap">
+          <img src="team photo.jpg" alt="" class="atm-image" id="atm-image" />
+        </div>
+        <div class="atm-overlay"></div>
+        <div class="atm-content reveal">
+          <p class="atm-quote">Thousands of homeowners have sold their properties quickly and stress-free with our
+            expertise. You can too.</p>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="mkt-section process-section" id="how-it-works">
+        <div class="mkt-inner">
+
+          <div class="mkt-header reveal">
+            <p class="mkt-eyebrow">Simple from start to finish</p>
+            <h2 class="mkt-title">How It Works</h2>
+          </div>
+
+          <div class="process-grid">
+            <div class="process-card reveal">
+              <div class="pc-number" aria-hidden="true">1</div>
+              <div class="pc-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg></div>
+              <h3 class="pc-title">Tell Us More.</h3>
+              <p class="pc-body">Tell us about your property. It takes about two minutes and there is no obligation.</p>
+            </div>
+            <div class="process-card reveal reveal--delay-1">
+              <div class="pc-number" aria-hidden="true">2</div>
+              <div class="pc-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg></div>
+              <h3 class="pc-title">Review Your Offer.</h3>
+              <p class="pc-body">A Story Homes agent will reach out within 24 to 48 hours with an offer.</p>
+            </div>
+            <div class="process-card reveal reveal--delay-2">
+              <div class="pc-number" aria-hidden="true">3</div>
+              <div class="pc-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></div>
+              <h3 class="pc-title">Choose Your Closing Date.</h3>
+              <p class="pc-body">Accept the offer and choose a closing date that works for your situation.</p>
+            </div>
+          </div>
+
+          <!-- Trust boxes -->
+          <div class="credibility-grid reveal">
+            <div class="credibility-item">
+              <span class="cr-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg></span>
+              <strong>California Focused</strong>
+              <span>We work exclusively in California markets and understand the local landscape.</span>
+            </div>
+            <div class="credibility-item">
+              <span class="cr-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                </svg></span>
+              <strong>Direct Cash Offers</strong>
+              <span>Offers come directly from investors. No middlemen, no agent fees, no uncertainty.</span>
+            </div>
+            <div class="credibility-item">
+              <span class="cr-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg></span>
+              <strong>Flexible Closing</strong>
+              <span>You choose the closing date. We work around your timeline, not ours.</span>
+            </div>
+            <div class="credibility-item">
+              <span class="cr-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg></span>
+              <strong>Transparent Process</strong>
+              <span>No surprises. Every step is explained clearly before you commit to anything.</span>
+            </div>
+          </div>
+
+          <div class="cities-wrap reveal">
+            <p class="cities-label">Popular cities we serve</p>
+            <div class="cities-list" id="cities-list">
+              <a href="#get-started" class="city-link" data-city="Los Angeles">Los Angeles</a>
+              <a href="#get-started" class="city-link" data-city="San Diego">San Diego</a>
+              <a href="#get-started" class="city-link" data-city="Oakland">Oakland</a>
+              <a href="#get-started" class="city-link" data-city="Pasadena">Pasadena</a>
+              <a href="#get-started" class="city-link" data-city="Long Beach">Long Beach</a>
+              <a href="#get-started" class="city-link" data-city="Riverside">Riverside</a>
+              <a href="#get-started" class="city-link" data-city="Huntington Beach">Huntington Beach</a>
+              <a href="#get-started" class="city-link" data-city="Mission Viejo">Mission Viejo</a>
+              <a href="#get-started" class="city-link" data-city="Corona">Corona</a>
+              <a href="#get-started" class="city-link" data-city="Costa Mesa">Costa Mesa</a>
+              <a href="#get-started" class="city-link" data-city="Fontana">Fontana</a>
+              <a href="#get-started" class="city-link" data-city="Fullerton">Fullerton</a>
+              <a href="#get-started" class="city-link" data-city="Orange">Orange</a>
+              <a href="#get-started" class="city-link" data-city="Pomona">Pomona</a>
+              <a href="#get-started" class="city-link" data-city="Compton">Compton</a>
+              <a href="#get-started" class="city-link" data-city="Inglewood">Inglewood</a>
+              <a href="#get-started" class="city-link" data-city="Hemet">Hemet</a>
+              <a href="#get-started" class="city-link" data-city="Lake Arrowhead">Lake Arrowhead</a>
+            </div>
+          </div>
+
+          <div class="section-cta reveal">
+            <button class="btn-primary" id="btn-process-cta">
+              Start Your Offer
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mkt-section faq-section" id="faq">
+        <div class="mkt-inner">
+
+          <div class="mkt-header reveal">
+            <p class="mkt-eyebrow">Common questions</p>
+            <h2 class="mkt-title">What You Need to Know</h2>
+          </div>
+
+          <div class="faq-list reveal">
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                What is the fastest way to sell my house?
+                <span class="faq-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">The fastest way is to sell directly to a cash home buyer like Story Homes.
+                  We buy as-is, with no repairs or showings required, and can typically close within 7 to 10 days.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                How do you determine a fair cash offer for my house?
+                <span class="faq-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">We consider your home's current condition, any repair requirements, and
+                  recent comparable sales in the area. Our offer is designed to be transparent and fair, with no hidden
+                  deductions.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                Are there any closing costs when selling as-is to Story Homes?
+                <span class="faq-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">No. We cover standard closing costs. The offer we present is precisely what
+                  you walk away with. No deductions, no surprises.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                Can I sell inherited property if it is still in probate?
+                <span class="faq-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">Yes. We buy inherited homes regardless of whether the probate process is
+                  complete, and we walk you through every required step to ensure a smooth transaction.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                How quickly can I sell to avoid foreclosure?
+                <span class="faq-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">We can often close in as little as 7 to 10 days. Acting early gives you time
+                  to protect your credit and resolve the situation on your own terms.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                Will you buy my house if it has significant damage?
+                <span class="faq-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">Absolutely. We buy homes regardless of their structural or cosmetic
+                  condition, including properties with foundation issues, fire damage, or extensive deferred
+                  maintenance.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false">
+                How does selling to Story Homes compare to listing with an agent?
+                <span class="faq-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-inner">You avoid commissions, closing costs, repairs, showings, and the uncertainty
+                  that comes with a traditional listing. Our process is direct, fast, and built around your schedule.
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /faq-list -->
+
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="mkt-section final-cta-section" id="get-started">
+        <div class="mkt-inner">
+
+          <div class="final-cta-inner">
+            <div class="mkt-header reveal">
+              <p class="mkt-eyebrow">Next steps</p>
+              <h2 class="final-cta-title">Ready when you are.</h2>
+            </div>
+
+            <div class="ai-card reveal">
+
+              <div class="step-head">
+                <h2>Where is your property?</h2>
+                <p>We use this to prepare an accurate, fair offer.</p>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="btm-street">Street Address</label>
+                <input type="text" id="btm-street" class="field-input" placeholder="Start typing your address..."
+                  autocomplete="off" />
+              </div>
+
+              <div class="field-row">
+                <div class="field-group grow-2">
+                  <label class="field-label" for="btm-city">City</label>
+                  <input type="text" id="btm-city" class="field-input" placeholder="City" />
+                </div>
+                <div class="field-group grow-1 locked-field">
+                  <label class="field-label" for="btm-state">State</label>
+                  <input type="text" id="btm-state" class="field-input" value="California" readonly tabindex="-1" />
+                </div>
+                <div class="field-group grow-1">
+                  <label class="field-label" for="btm-zip">ZIP</label>
+                  <input type="text" id="btm-zip" class="field-input" placeholder="90210" inputmode="numeric"
+                    maxlength="5" />
+                </div>
+              </div>
+
+              <div class="step-nav" style="margin-top: 8px;">
+                <button class="btn-primary" id="btn-btm-continue">
+                  Get My Fair Offer
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+            </div><!-- /ai-card -->
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /marketing-sections -->
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <div class="footer-legal">
+          <span>DRE #02247689</span>
+          <span class="footer-dot" aria-hidden="true"></span>
+          <span>Clean Slate California Inc.</span>
+          <span class="footer-dot" aria-hidden="true"></span>
+          <span class="footer-address">500 Technology Drive, Suite 150, Irvine, California</span>
+        </div>
+        <div class="footer-copy">
+          &copy; 2026 Story Homes. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /app-shell -->
+
+  <!--
+    Google Places Autocomplete (optional):
+    Replace YOUR_API_KEY and uncomment to enable intelligent address suggestions.
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initGooglePlaces" async defer></script>
+  -->
+
+  <script src="app.js"></script>
+</body>
+
+</html>
