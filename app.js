@@ -886,6 +886,52 @@ if (btnFinalCta) {
   sections.forEach(s => io.observe(s));
 })();
 
+/* ─── Hamburger menu ─── */
+(function initHamburger() {
+  const btn    = document.getElementById('hamburger-btn');
+  const nav    = document.getElementById('mobile-nav');
+  const mobCta = document.getElementById('mob-get-started');
+  if (!btn || !nav) return;
+
+  let open = false;
+
+  function openMenu() {
+    open = true;
+    nav.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    nav.animate([{ opacity: 0, transform: 'translateY(-8px)' }, { opacity: 1, transform: 'translateY(0)' }],
+      { duration: 240, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'forwards' });
+  }
+
+  function closeMenu() {
+    open = false;
+    btn.setAttribute('aria-expanded', 'false');
+    const anim = nav.animate([{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-8px)' }],
+      { duration: 200, easing: 'cubic-bezier(0.4,0,0.2,1)', fill: 'forwards' });
+    anim.onfinish = () => { nav.hidden = true; };
+  }
+
+  btn.addEventListener('click', () => open ? closeMenu() : openMenu());
+
+  // Close on any nav link click
+  nav.querySelectorAll('.mob-nav-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Mobile Get Started CTA
+  if (mobCta) {
+    mobCta.addEventListener('click', () => {
+      closeMenu();
+      setTimeout(() => goToStep(2), 260);
+    });
+  }
+
+  // Close on outside tap
+  document.addEventListener('click', e => {
+    if (open && !nav.contains(e.target) && !btn.contains(e.target)) closeMenu();
+  });
+})();
+
 /* ─── City links ─── */
 (function initCityLinks() {
   const list      = document.getElementById('cities-list');

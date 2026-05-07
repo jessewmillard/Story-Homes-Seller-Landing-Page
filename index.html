@@ -70,7 +70,26 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
       </button>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+      </button>
     </header>
+
+    <!-- Mobile nav overlay -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#reviews"        class="mob-nav-link">Reviews</a>
+      <a href="#why-story-homes" class="mob-nav-link">Compare</a>
+      <a href="#how-it-works"   class="mob-nav-link">How It Works</a>
+      <a href="#faq"            class="mob-nav-link">FAQ</a>
+      <a href="#get-started"    class="mob-nav-link">Next Steps</a>
+      <button class="btn-primary mob-nav-cta" id="mob-get-started">
+        Get Started
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </nav>
 
     <!-- ── Steps ── -->
     <main class="steps-viewport" id="steps-viewport">
@@ -718,7 +737,7 @@
               class="local-video"
               src="Hemet Hillcrest Testimonial_1.mp4"
               controls
-              preload="metadata"
+              preload="auto"
               playsinline
               aria-label="Hemet Hillcrest testimonial — Story Homes"
             ></video>
@@ -736,6 +755,7 @@
             <h2 class="mkt-title">Story Homes vs. Traditional Listings</h2>
           </div>
 
+          <div class="comp-scroll-wrap">
           <div class="comp-table reveal">
 
             <div class="comp-header-row">
@@ -812,6 +832,7 @@
             </div>
 
           </div><!-- /comp-table -->
+          </div><!-- /comp-scroll-wrap -->
 
           <div class="section-cta reveal">
             <button class="btn-primary" id="btn-comp-cta">
