@@ -671,6 +671,13 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
   text-transform: uppercase;
   color: var(--text-muted);
 }
+.field-optional {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 11px;
+  opacity: 0.7;
+}
 
 .field-input {
   width: 100%;

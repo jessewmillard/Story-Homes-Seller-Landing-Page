@@ -13,6 +13,7 @@ const state = {
   formData: {
     // Address
     street_address: '',
+    apt_unit: '',
     city: '',
     state: 'California',
     zip: '',
@@ -251,6 +252,7 @@ function validateStep2() {
 els.btnStep2.addEventListener('click', () => {
   if (!validateStep2()) return;
   state.formData.street_address = els.streetAddress.value.trim();
+  state.formData.apt_unit       = (document.getElementById('apt-unit')?.value || '').trim();
   state.formData.city = els.city.value.trim();
   state.formData.zip = els.zip.value.trim();
   goToStep(3);
@@ -363,6 +365,7 @@ function buildPayload() {
     email:           state.formData.email,
     phone:           state.formData.phone,
     street_address:  state.formData.street_address,
+    apt_unit:        state.formData.apt_unit,
     city:            state.formData.city,
     state:           state.formData.state,
     zip:             state.formData.zip,
@@ -435,48 +438,51 @@ els.btnSubmit.addEventListener('click', async () => {
  * Uncomment the <script> tag in index.html and replace YOUR_API_KEY to enable.
  */
 window.initGooglePlaces = function() {
-  const input = els.streetAddress;
-  const autocomplete = new google.maps.places.Autocomplete(input, {
-    types: ['address'],
-    componentRestrictions: { country: 'us' },
-    fields: ['address_components', 'formatted_address'],
-  });
+  try {
+    const input = els.streetAddress;
+    if (!input || !window.google?.maps?.places) return;
 
-  // Hide our custom dropdown when Google's is active
-  els.acDropdown.style.display = 'none';
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+      types: ['address'],
+      componentRestrictions: { country: 'us' },
+      fields: ['address_components'],
+    });
 
-  autocomplete.addListener('place_changed', () => {
-    const place = autocomplete.getPlace();
-    if (!place.address_components) return;
+    // Hide our custom dropdown when Google's is active
+    if (els.acDropdown) els.acDropdown.style.display = 'none';
 
-    const get = (type) => {
-      const comp = place.address_components.find(c => c.types.includes(type));
-      return comp ? comp.long_name : '';
-    };
-    const getShort = (type) => {
-      const comp = place.address_components.find(c => c.types.includes(type));
-      return comp ? comp.short_name : '';
-    };
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+      if (!place.address_components) return;
 
-    const streetNum  = get('street_number');
-    const streetName = get('route');
-    const city       = get('locality') || get('sublocality') || get('neighborhood');
-    const zip        = getShort('postal_code');
+      const get = (type) => {
+        const comp = place.address_components.find(c => c.types.includes(type));
+        return comp ? comp.long_name : '';
+      };
+      const getShort = (type) => {
+        const comp = place.address_components.find(c => c.types.includes(type));
+        return comp ? comp.short_name : '';
+      };
 
-    if (streetNum && streetName) {
-      els.streetAddress.value = `${streetNum} ${streetName}`;
-    }
-    if (city) els.city.value = city;
-    if (zip)  els.zip.value  = zip;
+      const streetNum  = get('street_number');
+      const streetName = get('route');
+      const city       = get('locality') || get('sublocality') || get('neighborhood');
+      const zip        = getShort('postal_code');
 
-    // Clear validation errors
-    clearError('err-street');
-    clearError('err-city');
-    clearError('err-zip');
-    markInputError(els.streetAddress, false);
-    markInputError(els.city, false);
-    markInputError(els.zip, false);
-  });
+      if (streetNum && streetName) els.streetAddress.value = `${streetNum} ${streetName}`;
+      if (city) els.city.value = city;
+      if (zip)  els.zip.value  = zip;
+
+      clearError('err-street');
+      clearError('err-city');
+      clearError('err-zip');
+      markInputError(els.streetAddress, false);
+      markInputError(els.city, false);
+      markInputError(els.zip, false);
+    });
+  } catch (err) {
+    console.warn('[Story Homes] Google Places unavailable, using fallback:', err);
+  }
 };
 
 /**

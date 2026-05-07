@@ -218,6 +218,11 @@
               <span class="field-error" id="err-street"></span>
             </div>
 
+            <div class="field-group">
+              <label class="field-label" for="apt-unit">Apt / Suite / Unit <span class="field-optional">(optional)</span></label>
+              <input type="text" id="apt-unit" class="field-input" placeholder="e.g. Apt 4B" autocomplete="address-line2" />
+            </div>
+
             <div class="field-row">
               <div class="field-group grow-2">
                 <label class="field-label" for="city">City</label>
@@ -1127,6 +1132,11 @@
                   autocomplete="off" />
               </div>
 
+              <div class="field-group">
+                <label class="field-label" for="btm-apt">Apt / Suite / Unit <span class="field-optional">(optional)</span></label>
+                <input type="text" id="btm-apt" class="field-input" placeholder="e.g. Apt 4B" autocomplete="address-line2" />
+              </div>
+
               <div class="field-row">
                 <div class="field-group grow-2">
                   <label class="field-label" for="btm-city">City</label>
@@ -1179,11 +1189,7 @@
 
   </div><!-- /app-shell -->
 
-  <!--
-    Google Places Autocomplete (optional):
-    Replace YOUR_API_KEY and uncomment to enable intelligent address suggestions.
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initGooglePlaces" async defer></script>
-  -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvFz3EEpLPXOw816B8j-FbySrFaf__BRs&libraries=places&callback=initGooglePlaces" async defer></script>
 
   <script src="app.js"></script>
 </body>
