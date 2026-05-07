@@ -397,6 +397,7 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
 @media (max-width: 600px) {
   #step-1 {
     padding: 20px 20px 40px;
+    padding-top: clamp(48px, 10vh, 80px);
     align-items: flex-start;
     justify-content: center;
   }
@@ -452,6 +453,7 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
   gap: 4px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 }
+.mobile-nav[hidden] { display: none; }
 .mob-nav-link {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
