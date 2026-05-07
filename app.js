@@ -922,7 +922,8 @@ if (btnFinalCta) {
   if (mobCta) {
     mobCta.addEventListener('click', () => {
       closeMenu();
-      setTimeout(() => goToStep(2), 260);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => goToStep(2), 400);
     });
   }
 

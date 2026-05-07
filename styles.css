@@ -1698,6 +1698,9 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
   width: 100%;
   display: block;
   border-radius: var(--r-xl);
+  aspect-ratio: 16 / 9;
+  background: #111;
+  object-fit: cover;
 }
 .yt-thumb {
   width: 100%;
