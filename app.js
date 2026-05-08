@@ -432,78 +432,13 @@ els.btnSubmit.addEventListener('click', async () => {
 
 /* ─── Address Autocomplete ─── */
 
-/**
- * Google Places integration.
- * Called automatically when the Google Maps script loads (callback=initGooglePlaces).
- * Uncomment the <script> tag in index.html and replace YOUR_API_KEY to enable.
- */
-window.initGooglePlaces = function() {
-  try {
-    const input = els.streetAddress;
-    if (!input || !window.google?.maps?.places) return;
-
-    const autocomplete = new google.maps.places.Autocomplete(input, {
-      types: ['address'],
-      componentRestrictions: { country: 'us' },
-      fields: ['address_components'],
-    });
-
-    // Hide our custom dropdown when Google's is active
-    if (els.acDropdown) els.acDropdown.style.display = 'none';
-
-    autocomplete.addListener('place_changed', () => {
-      const place = autocomplete.getPlace();
-      if (!place.address_components) return;
-
-      const get = (type) => {
-        const comp = place.address_components.find(c => c.types.includes(type));
-        return comp ? comp.long_name : '';
-      };
-      const getShort = (type) => {
-        const comp = place.address_components.find(c => c.types.includes(type));
-        return comp ? comp.short_name : '';
-      };
-
-      const streetNum  = get('street_number');
-      const streetName = get('route');
-      const city       = get('locality') || get('sublocality') || get('neighborhood');
-      const zip        = getShort('postal_code');
-
-      if (streetNum && streetName) els.streetAddress.value = `${streetNum} ${streetName}`;
-      if (city) els.city.value = city;
-      if (zip)  els.zip.value  = zip;
-
-      clearError('err-street');
-      clearError('err-city');
-      clearError('err-zip');
-      markInputError(els.streetAddress, false);
-      markInputError(els.city, false);
-      markInputError(els.zip, false);
-    });
-  } catch (err) {
-    console.warn('[Story Homes] Google Places unavailable, using fallback:', err);
-  }
-};
-
-/**
- * Lightweight fallback autocomplete using the U.S. Census Bureau Geocoder API.
- * Free, no API key required. Activates only when Google Places is NOT loaded.
- */
-(function setupFallbackAutocomplete() {
+(function setupAutocomplete() {
   let debounceTimer = null;
-  let currentRequest = null;
-
-  function isGooglePlacesLoaded() {
-    return typeof google !== 'undefined' && google.maps && google.maps.places;
-  }
 
   function showDropdown(suggestions) {
     const dd = els.acDropdown;
     dd.innerHTML = '';
-    if (!suggestions.length) {
-      dd.classList.remove('open');
-      return;
-    }
+    if (!suggestions.length) { dd.classList.remove('open'); return; }
     suggestions.forEach((s, i) => {
       const li = document.createElement('li');
       li.className = 'ac-item';
@@ -518,10 +453,7 @@ window.initGooglePlaces = function() {
           ${s.sub ? `<span class="ac-item-sub">${escapeHtml(s.sub)}</span>` : ''}
         </span>
       `;
-      li.addEventListener('mousedown', (e) => {
-        e.preventDefault();
-        selectSuggestion(s);
-      });
+      li.addEventListener('mousedown', (e) => { e.preventDefault(); selectSuggestion(s); });
       dd.appendChild(li);
     });
     dd.classList.add('open');
@@ -531,27 +463,57 @@ window.initGooglePlaces = function() {
     return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  function selectSuggestion(s) {
-    els.streetAddress.value = s.street || s.main;
-    if (s.city)  els.city.value = s.city;
-    if (s.zip)   els.zip.value  = s.zip;
+  async function selectSuggestion(s) {
     els.acDropdown.classList.remove('open');
-    clearError('err-street');
-    clearError('err-city');
-    clearError('err-zip');
+    els.streetAddress.value = s.street || s.main;
+    if (s.city) els.city.value = s.city;
+    if (s.zip)  els.zip.value  = s.zip;
+
+    // Fetch full address components when a Google place_id is available
+    if (s.place_id) {
+      try {
+        const resp = await fetch(`/.netlify/functions/places?place_id=${encodeURIComponent(s.place_id)}`);
+        const data = await resp.json();
+        const comps = data.result?.address_components;
+        if (comps) {
+          const get      = (t) => (comps.find(c => c.types.includes(t)) || {}).long_name  || '';
+          const getShort = (t) => (comps.find(c => c.types.includes(t)) || {}).short_name || '';
+          const streetNum  = get('street_number');
+          const streetName = get('route');
+          const city = get('locality') || get('sublocality') || get('neighborhood');
+          const zip  = getShort('postal_code');
+          if (streetNum && streetName) els.streetAddress.value = `${streetNum} ${streetName}`;
+          if (city) els.city.value = city;
+          if (zip)  els.zip.value  = zip;
+        }
+      } catch (_) { /* keep whatever was pre-filled */ }
+    }
+
+    clearError('err-street'); clearError('err-city'); clearError('err-zip');
     markInputError(els.streetAddress, false);
     markInputError(els.city, false);
     markInputError(els.zip, false);
   }
 
+  async function fetchGoogleSuggestions(query) {
+    const resp = await fetch(`/.netlify/functions/places?input=${encodeURIComponent(query)}`);
+    const data = await resp.json();
+    if (!data.predictions?.length) return [];
+    return data.predictions.slice(0, 5).map(p => ({
+      main:     p.structured_formatting?.main_text      || p.description,
+      sub:      p.structured_formatting?.secondary_text || '',
+      place_id: p.place_id,
+    }));
+  }
+
   async function fetchCensusSuggestions(query) {
     const url = `https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=${encodeURIComponent(query + ', California')}&benchmark=Public_AR_Current&format=json`;
-    const resp = await fetch(url, { signal: currentRequest?.signal });
+    const resp = await fetch(url);
     const data = await resp.json();
     const matches = data?.result?.addressMatches || [];
     return matches.slice(0, 5).map(m => ({
       main: m.matchedAddress,
-      sub: null,
+      sub:  null,
       street: m.addressComponents?.fromAddress
         ? `${m.addressComponents.fromAddress} ${m.addressComponents.streetName}${m.addressComponents.suffixType ? ' ' + m.addressComponents.suffixType : ''}`
         : null,
@@ -561,24 +523,20 @@ window.initGooglePlaces = function() {
   }
 
   els.streetAddress.addEventListener('input', () => {
-    if (isGooglePlacesLoaded()) return;
-
     clearTimeout(debounceTimer);
     const q = els.streetAddress.value.trim();
-
-    if (q.length < 5) {
-      els.acDropdown.classList.remove('open');
-      return;
-    }
+    if (q.length < 4) { els.acDropdown.classList.remove('open'); return; }
 
     debounceTimer = setTimeout(async () => {
-      if (currentRequest) currentRequest.abort();
-      currentRequest = new AbortController();
       try {
-        const suggestions = await fetchCensusSuggestions(q);
+        const suggestions = await fetchGoogleSuggestions(q);
         showDropdown(suggestions);
-      } catch (err) {
-        if (err.name !== 'AbortError') {
+      } catch (_) {
+        // Google proxy unavailable — fall back to Census Bureau
+        try {
+          const suggestions = await fetchCensusSuggestions(q);
+          showDropdown(suggestions);
+        } catch (_) {
           els.acDropdown.classList.remove('open');
         }
       }
@@ -589,7 +547,6 @@ window.initGooglePlaces = function() {
     setTimeout(() => els.acDropdown.classList.remove('open'), 180);
   });
 
-  // Keyboard navigation
   els.streetAddress.addEventListener('keydown', (e) => {
     const items = els.acDropdown.querySelectorAll('.ac-item');
     let focused = els.acDropdown.querySelector('.ac-item.focused');
@@ -597,9 +554,8 @@ window.initGooglePlaces = function() {
 
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      if (!focused) {
-        items[0].classList.add('focused');
-      } else {
+      if (!focused) { items[0].classList.add('focused'); }
+      else {
         focused.classList.remove('focused');
         const next = focused.nextElementSibling;
         if (next) next.classList.add('focused');
