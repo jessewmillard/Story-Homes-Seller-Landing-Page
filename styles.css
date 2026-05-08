@@ -345,7 +345,7 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
 }
 .hero-content .oc-icon              { background: var(--olive); }
 .hero-content .oc-body strong       { color: #F2EDE8; }
-.hero-content .oc-body span         { color: rgba(242, 237, 232, 0.50); }
+.hero-content .oc-body span         { color: rgba(242, 237, 232, 0.90); }
 
 /* ── Rotating Word Container ── */
 .rw-outer {
