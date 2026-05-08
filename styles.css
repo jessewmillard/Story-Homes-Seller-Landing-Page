@@ -335,10 +335,13 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
 .hero-content .value-list li        { color: rgba(242, 237, 232, 0.88); }
 .hero-content .vl-icon              { background: var(--olive); }
 .hero-content .offer-callout {
-  background: rgba(140, 153, 101, 0.80);
+  background: rgba(140, 153, 101, 0.65);
   border-color: rgba(140, 153, 101, 0.90);
   border-left-color: var(--olive);
   box-shadow: 0 0 36px rgba(140, 153, 101, 0.30);
+}
+[data-theme="dark"] .hero-content .offer-callout {
+  background: rgba(140, 153, 101, 0.65);
 }
 .hero-content .oc-icon              { background: var(--olive); }
 .hero-content .oc-body strong       { color: #F2EDE8; }
