@@ -1212,52 +1212,6 @@
     data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
     data-widget-id="69ea65f402b0b92f7c9ab102">
   </script>
-
-  <!-- Sticky footer bar -->
-  <div id="story-sticky-footer">
-    <div class="sfooter-inner">
-
-      <!-- Left: Call -->
-      <a class="sfooter-call" href="tel:+19497493104" aria-label="Call (949) 749-3104">
-        <div class="sfooter-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-        </div>
-        <div>
-          <span class="sfooter-text-small">Call now</span>
-          <span class="sfooter-text-main">(949) 749-3104</span>
-        </div>
-      </a>
-
-      <!-- Right: Chat -->
-      <div class="sfooter-chat" onclick="var b=document.getElementById('lc_text-widget--btn'); if(b) b.click();">
-        <div class="sfooter-chat-text">
-          <span class="sfooter-text-small">Chat with us</span>
-          <span class="sfooter-text-main">Live agent</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var footer = document.getElementById('story-sticky-footer');
-      var shown = false;
-      function showFooter() {
-        if (!shown) { shown = true; footer.classList.add('visible'); }
-      }
-      if (window.innerWidth >= 769) {
-        showFooter();
-      } else {
-        window.addEventListener('scroll', function () {
-          if (window.scrollY > 50) showFooter();
-        }, { passive: true });
-        setTimeout(showFooter, 3000);
-      }
-    })();
-  </script>
 </body>
 
 </html>
