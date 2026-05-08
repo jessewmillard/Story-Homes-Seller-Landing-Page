@@ -973,17 +973,41 @@ if (btnFinalCta) {
 (function initBtmForm() {
   const btn = document.getElementById('btn-btm-continue');
   if (!btn) return;
+  const btmStreet = document.getElementById('btm-street');
+  const btmErrStreet = document.createElement('span');
+  btmErrStreet.className = 'field-error';
+  btmStreet.parentNode.appendChild(btmErrStreet);
+
   btn.addEventListener('click', () => {
-    const street = document.getElementById('btm-street').value.trim();
-    const city   = document.getElementById('btm-city').value.trim();
-    const zip    = document.getElementById('btm-zip').value.trim();
-    // Pre-fill main form
-    if (street) document.getElementById('street-address').value = street;
-    if (city)   document.getElementById('city').value = city;
-    if (zip)    document.getElementById('zip').value = zip;
-    // Navigate
+    const street = btmStreet.value.trim();
+    if (!street) {
+      btmErrStreet.textContent = 'Please enter a street address.';
+      btmStreet.classList.add('is-error');
+      btmStreet.focus();
+      return;
+    }
+    btmErrStreet.textContent = '';
+    btmStreet.classList.remove('is-error');
+
+    // Pre-fill step 2 inputs, then always land on step 2 so the
+    // Continue button runs and saves the address to state.formData.
+    document.getElementById('street-address').value = street;
+    const city = document.getElementById('btm-city').value.trim();
+    const zip  = document.getElementById('btm-zip').value.trim();
+    const apt  = document.getElementById('btm-apt').value.trim();
+    if (city) document.getElementById('city').value = city;
+    if (zip)  document.getElementById('zip').value  = zip;
+    if (apt)  document.getElementById('apt-unit').value = apt;
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => goToStep(street ? 3 : 2), 380);
+    setTimeout(() => goToStep(2), 380);
+  });
+
+  btmStreet.addEventListener('input', () => {
+    if (btmStreet.classList.contains('is-error')) {
+      btmErrStreet.textContent = '';
+      btmStreet.classList.remove('is-error');
+    }
   });
 })();
 
