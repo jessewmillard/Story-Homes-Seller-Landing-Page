@@ -26,12 +26,15 @@ const state = {
     full_name: '',
     email: '',
     phone: '',
-    // UTM
+    // UTM & tracking
     utm_source: '',
     utm_medium: '',
     utm_campaign: '',
     utm_content: '',
     utm_term: '',
+    gclid: '',
+    lead_source: 'Website',
+    landing_page: document.title,
     // Meta
     timestamp: '',
     theme: ''
@@ -80,7 +83,7 @@ els.themeBtn.addEventListener('click', toggleTheme);
 /* ─── UTM Capture ─── */
 function captureUTM() {
   const params = new URLSearchParams(window.location.search);
-  const fields = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  const fields = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid'];
   fields.forEach(k => {
     if (params.has(k)) state.formData[k] = params.get(k);
   });
@@ -347,6 +350,13 @@ function validateStep4() {
     markInputError(els.phone, false);
   }
 
+  if (!document.getElementById('consent').checked) {
+    setError('err-consent', 'Please agree to the Terms & Conditions and Privacy Policy to continue.');
+    valid = false;
+  } else {
+    clearError('err-consent');
+  }
+
   return valid;
 }
 
@@ -378,34 +388,30 @@ function buildPayload() {
     utm_campaign:    state.formData.utm_campaign,
     utm_content:     state.formData.utm_content,
     utm_term:        state.formData.utm_term,
+    gclid:           state.formData.gclid,
+    lead_source:     state.formData.lead_source,
+    landing_page:    state.formData.landing_page,
   };
 }
 
 async function submitForm(payload) {
-  /**
-   * Replace WEBHOOK_URL with your endpoint:
-   *   Google Sheets via Make / Zapier webhook
-   *   Or direct Google Apps Script Web App URL
-   *
-   * Example:
-   *   const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/...';
-   *   const WEBHOOK_URL = 'https://script.google.com/macros/s/.../exec';
-   */
-  const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyJ7_pYP4er0Vjf3LjLtYvUVG8T40f453ubBTgBqebbyQuylnWUIQTWUD9C_kA-4TLT7w/exec';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJ7_pYP4er0Vjf3LjLtYvUVG8T40f453ubBTgBqebbyQuylnWUIQTWUD9C_kA-4TLT7w/exec';
+  const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/4Nxh6vu24a6ora7U7udU/webhook-trigger/66I7wp9aawfIcOahpICa';
 
-  if (!WEBHOOK_URL) {
-    console.info('[Story Homes] Form payload (no webhook configured):', payload);
-    // Simulate network delay in development
-    await new Promise(r => setTimeout(r, 1200));
-    return;
-  }
-
-  await fetch(WEBHOOK_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'text/plain' },
-    body: JSON.stringify(payload),
-  });
+  await Promise.allSettled([
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload),
+    }),
+    fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }),
+  ]);
 }
 
 els.btnSubmit.addEventListener('click', async () => {
@@ -963,6 +969,41 @@ if (btnFinalCta) {
     if (btmStreet.classList.contains('is-error')) {
       btmErrStreet.textContent = '';
       btmStreet.classList.remove('is-error');
+    }
+  });
+})();
+
+/* ─── Consent checkbox — clear error on check ─── */
+document.getElementById('consent').addEventListener('change', function () {
+  if (this.checked) clearError('err-consent');
+});
+
+/* ─── Modals (Terms & Privacy Policy) ─── */
+(function initModals() {
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.modal-close').focus();
+  }
+
+  function closeModal(modal) {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('btn-terms').addEventListener('click', () => openModal('modal-terms'));
+  document.getElementById('btn-privacy').addEventListener('click', () => openModal('modal-privacy'));
+
+  document.querySelectorAll('.modal-overlay').forEach(modal => {
+    modal.querySelector('.modal-close').addEventListener('click', () => closeModal(modal));
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(modal); });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay:not([hidden])').forEach(closeModal);
     }
   });
 })();

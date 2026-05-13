@@ -467,6 +467,22 @@
               </div>
             </div>
 
+            <div class="consent-group">
+              <label class="consent-label">
+                <input type="checkbox" id="consent" class="consent-checkbox" />
+                <span class="consent-text">I agree to the
+                  <button type="button" class="consent-link" id="btn-terms">Terms &amp; Conditions</button>
+                  and
+                  <button type="button" class="consent-link" id="btn-privacy">Privacy Policy</button>.
+                  By submitting this form, you consent to receive SMS messages and/or emails from Story Homes.
+                  Message frequency varies. To unsubscribe, follow the instructions provided in our communications.
+                  Msg &amp; data rates may apply for SMS. Your information is secure and will not be sold to third
+                  parties. Text HELP for help. Text STOP to cancel.
+                </span>
+              </label>
+              <span class="field-error" id="err-consent"></span>
+            </div>
+
             <div class="step-nav">
               <button class="btn-back" data-goto="3">Back</button>
               <button class="btn-primary btn-submit" id="btn-submit">
@@ -1205,6 +1221,94 @@
     </footer>
 
   </div><!-- /app-shell -->
+
+  <!-- Terms & Conditions Modal -->
+  <div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="modal-terms-title" hidden>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="modal-terms-title">Terms &amp; Conditions</h2>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3>1. Introduction</h3>
+        <p>Welcome to StoryHomes.com. These Terms of Use govern your access to and use of StoryHomes.com, including all content, functionality, and services offered on or through the website. By accessing or using the site, you agree to be bound by these Terms of Use.</p>
+        <h3>2. Acceptance of Terms</h3>
+        <p>By using StoryHomes.com, you agree to comply with and be bound by these Terms of Use and our Privacy Policy. If you do not agree with any part of these terms, please do not use the website.</p>
+        <h3>3. Modifications to Terms</h3>
+        <p>We reserve the right to modify or revise these Terms of Use at any time without prior notice. Any changes will be effective immediately upon posting. Your continued use of the website after changes signifies acceptance of the modified terms.</p>
+        <h3>4. Use of the Website</h3>
+        <p>You may use StoryHomes.com for lawful purposes only. You agree not to use the website in any way that could damage, disable, overburden, or impair the site or interfere with others' use and enjoyment of it.</p>
+        <h3>5. Intellectual Property</h3>
+        <p>All content, including text, graphics, logos, icons, images, audio clips, video clips, and software, is the property of StoryHomes.com or its content suppliers and is protected by intellectual property laws. Unauthorized use of this content is strictly prohibited.</p>
+        <h3>6. Prohibited Conduct</h3>
+        <p>By using StoryHomes.com, you agree not to:</p>
+        <ul>
+          <li>Violate any applicable laws or regulations.</li>
+          <li>Attempt to gain unauthorized access to any portion of the website.</li>
+          <li>Use any device, software, or routine that interferes with proper site operation.</li>
+          <li>Upload or transmit viruses, malware, or harmful code.</li>
+          <li>Misrepresent your identity or impersonate any person or entity.</li>
+        </ul>
+        <h3>7. Third-Party Links</h3>
+        <p>StoryHomes.com may contain links to third-party websites provided for your convenience. We do not endorse or assume responsibility for the content or practices of these third-party sites. Accessing them is at your own risk.</p>
+        <h3>8. Disclaimers and Limitation of Liability</h3>
+        <p><strong>Disclaimers:</strong> The website is provided "as is" and "as available" without warranties of any kind, either express or implied. StoryHomes.com does not guarantee the accuracy, completeness, or timeliness of content or services.</p>
+        <p><strong>Limitation of Liability:</strong> To the fullest extent permitted by law, StoryHomes.com shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from your use of or inability to use the website or its content.</p>
+        <h3>9. Indemnification</h3>
+        <p>You agree to indemnify, defend, and hold harmless StoryHomes.com, its affiliates, directors, officers, employees, and agents from any claims, damages, losses, liabilities, or expenses arising out of your use of the website or violation of these Terms.</p>
+        <h3>10. Governing Law and Jurisdiction</h3>
+        <p>These Terms of Use are governed by the laws of the State of California. Any legal action related to these terms shall be brought exclusively in California courts.</p>
+        <h3>11. Termination</h3>
+        <p>We reserve the right to terminate or suspend your access to StoryHomes.com without notice for conduct that violates these Terms of Use or is harmful to our interests or other users.</p>
+        <h3>12. Entire Agreement</h3>
+        <p>These Terms of Use, together with our Privacy Policy, constitute the entire agreement between you and StoryHomes.com regarding use of the website.</p>
+        <h3>13. Contact Us</h3>
+        <p>Story Homes<br>500 Technology Dr. Suite 150<br>Irvine, California<br>Email: admin@storyhomes.com<br>Phone: 949-749-3104</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="modal-privacy-title" hidden>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="modal-privacy-title">Privacy Policy</h2>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3>1. Introduction</h3>
+        <p>Welcome to StoryHomes.com. Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data. By using our website, you agree to the terms outlined in this policy.</p>
+        <h3>2. Information We Collect</h3>
+        <p><strong>Personal Identification Information:</strong> When you contact us, subscribe to our services, or fill out forms on our site, we may collect personal details such as your name, email address, phone number, and address.</p>
+        <p><strong>Non-Personal Information:</strong> This may include browser type, operating system, and other technical information that helps us improve user experience on our website.</p>
+        <p><strong>Usage Data:</strong> Information on how you use our site, such as pages visited, time spent, and links clicked.</p>
+        <h3>3. How We Use Your Information</h3>
+        <p>We use the collected information to:</p>
+        <ul>
+          <li>Respond to your inquiries and provide customer support.</li>
+          <li>Improve and personalize the user experience.</li>
+          <li>Send emails or updates if you've opted in.</li>
+          <li>Analyze user behavior for marketing and performance improvements.</li>
+        </ul>
+        <h3>4. Sharing Your Information</h3>
+        <p>We do not sell or trade your personal information. Trusted partners assisting with operations are required to keep your data confidential.</p>
+        <h3>5. Cookies and Tracking Technologies</h3>
+        <p>We use cookies to improve functionality and user experience. You may disable cookies in your browser, though some features may be limited.</p>
+        <h3>6. Security of Your Information</h3>
+        <p>We use reasonable security measures to protect your data, but no system can guarantee absolute security.</p>
+        <h3>7. Links to Other Websites</h3>
+        <p>We are not responsible for the privacy practices of third-party websites linked from our site.</p>
+        <h3>8. Your Data Protection Rights</h3>
+        <p>Depending on your location, you may have the right to access your personal data, correct inaccurate information, request deletion of your data, restrict processing, and request data portability.</p>
+        <p>To exercise these rights, contact <a href="mailto:admin@storyhomes.com" style="color:var(--accent);">admin@storyhomes.com</a>.</p>
+        <h3>9. Changes to This Privacy Policy</h3>
+        <p>Updates will be posted on this page with a revised "Last updated" date.</p>
+        <h3>10. Contact Us</h3>
+        <p>Story Homes<br>500 Technology Dr. Suite 150<br>Irvine, California<br>Email: admin@storyhomes.com<br>Phone: 949-749-3104</p>
+        <p>By using our website, you acknowledge and agree to this Privacy Policy.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 
