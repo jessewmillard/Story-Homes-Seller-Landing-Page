@@ -1143,6 +1143,13 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
   line-height: 1.25;
 }
 .accent-brand { color: var(--accent); }
+.mkt-subtitle {
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 16px auto 0;
+}
 
 /* ── Testimonials ── */
 .trust-section .mkt-inner {
