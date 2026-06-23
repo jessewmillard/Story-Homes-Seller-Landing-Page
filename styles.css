@@ -1162,6 +1162,77 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
 .video-section {
   padding-top: clamp(32px, 4vw, 44px);
 }
+.video-section .mkt-inner {
+  max-width: 1440px;
+  padding: 0 clamp(20px, 3vw, 48px);
+}
+/* ═══════════════════════════════════════════════
+   Any Condition Section
+   ═══════════════════════════════════════════════ */
+
+.any-condition-section {
+  overflow: hidden;
+}
+
+.props-marquee {
+  width: 100%;
+  overflow: hidden;
+  margin: clamp(40px, 5vw, 64px) 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.props-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: props-scroll 36s linear infinite;
+}
+
+.props-track:hover {
+  animation-play-state: paused;
+}
+
+.prop-img {
+  height: clamp(200px, 22vw, 320px);
+  width: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
+  display: block;
+}
+
+@keyframes props-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .props-track { animation: none; }
+}
+
+.any-condition-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.ac-pill {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 16px;
+  white-space: nowrap;
+}
+
 .process-section {
   padding-bottom: clamp(32px, 4vw, 44px);
 }
@@ -1694,8 +1765,45 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
    ═══════════════════════════════════════════════ */
 
 /* ═══════════════════════════════════════════════
+   Honeypot (bot trap)
+   ═══════════════════════════════════════════════ */
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════
    Video Section
    ═══════════════════════════════════════════════ */
+
+.video-pair {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.video-pair .yt-wrap {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .video-pair {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
 
 .yt-wrap {
   max-width: 860px;

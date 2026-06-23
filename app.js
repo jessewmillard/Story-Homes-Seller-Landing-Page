@@ -5,6 +5,9 @@
 
 'use strict';
 
+/* ─── Bot protection ─── */
+let _formStartTime = null;
+
 /* ─── State ─── */
 const state = {
   currentStep: 1,
@@ -166,8 +169,8 @@ function goToStep(targetStep) {
 window.goToStep = goToStep;
 
 /* ─── Start button ─── */
-els.btnStart.addEventListener('click', () => goToStep(2));
-els.btnHeaderCta.addEventListener('click', () => goToStep(2));
+els.btnStart.addEventListener('click', () => { _formStartTime = Date.now(); goToStep(2); });
+els.btnHeaderCta.addEventListener('click', () => { _formStartTime = Date.now(); goToStep(2); });
 
 /* ─── Back buttons ─── */
 document.querySelectorAll('.btn-back[data-goto]').forEach(btn => {
@@ -415,6 +418,17 @@ async function submitForm(payload) {
 
 els.btnSubmit.addEventListener('click', async () => {
   if (!validateStep4()) return;
+
+  // Bot checks — fail silently so bots think they succeeded
+  const honeypot = document.getElementById('hp-website');
+  const isBot =
+    (honeypot && honeypot.value.trim() !== '') ||   // honeypot filled
+    (_formStartTime && Date.now() - _formStartTime < 4000); // submitted in < 4 s
+
+  if (isBot) {
+    goToStep(5); // show confirmation without sending anything
+    return;
+  }
 
   const payload = buildPayload();
 
@@ -700,7 +714,7 @@ els.btnSubmit.addEventListener('click', async () => {
 })();
 
 /* ─── Final CTA button ─── */
-['btn-comp-cta', 'btn-process-cta'].forEach(id => {
+['btn-comp-cta', 'btn-process-cta', 'btn-condition-cta'].forEach(id => {
   const btn = document.getElementById(id);
   if (btn) btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -960,6 +974,7 @@ if (btnFinalCta) {
     if (zip)  document.getElementById('zip').value  = zip;
     if (apt)  document.getElementById('apt-unit').value = apt;
 
+    _formStartTime = Date.now();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => goToStep(2), 380);
   });

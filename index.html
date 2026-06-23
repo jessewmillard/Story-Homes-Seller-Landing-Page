@@ -450,6 +450,12 @@
               <p>A Story Homes advisor will reach out to confirm details and share your offer.</p>
             </div>
 
+            <!-- Honeypot — hidden from real users, filled by bots -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="hp-website">Website</label>
+              <input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="new-password" />
+            </div>
+
             <div class="field-group">
               <label class="field-label" for="full-name">Full Name</label>
               <input type="text" id="full-name" class="field-input" placeholder="Your full name" autocomplete="name" />
@@ -782,17 +788,87 @@
             <h2 class="mkt-title">Why Choose <span class="accent-brand">Story Homes</span>?</h2>
           </div>
 
-          <div class="yt-wrap reveal">
-            <video
-              class="local-video"
-              src="new test.mp4#t=0.001"
-              controls
-              preload="metadata"
-              playsinline
-              aria-label="Seller testimonial — Story Homes"
-            ></video>
+          <div class="video-pair reveal">
+            <div class="yt-wrap">
+              <video
+                class="local-video"
+                src="new test.mp4"
+                poster="poster-testimonial.jpg"
+                controls
+                preload="none"
+                playsinline
+                aria-label="Seller testimonial — Story Homes"
+              ></video>
+            </div>
+            <div class="yt-wrap">
+              <video
+                class="local-video"
+                src="Seller - Ad 8_1.mp4"
+                poster="poster-ad8.jpg"
+                controls
+                preload="none"
+                playsinline
+                aria-label="Story Homes seller ad"
+              ></video>
+            </div>
           </div>
 
+        </div>
+      </section>
+
+      <!-- Any Condition -->
+      <section class="mkt-section any-condition-section">
+        <div class="mkt-inner">
+          <div class="mkt-header reveal">
+            <p class="mkt-eyebrow">No repairs required</p>
+            <h2 class="mkt-title">We'll Buy Your Home in <span class="accent-brand"><em>Any Condition</em></span></h2>
+            <p class="mkt-subtitle">Fire damage. The roof caved in. Tenant won't leave. We've seen it all, and we buy it all. You don't lift a finger before closing.</p>
+          </div>
+        </div>
+
+        <!-- Full-width scrolling photo strip -->
+        <div class="props-marquee">
+          <div class="props-track" aria-hidden="true">
+            <img src="Props/prop-1.png" alt="" class="prop-img">
+            <img src="Props/prop-2.png" alt="" class="prop-img">
+            <img src="Props/prop-3.png" alt="" class="prop-img">
+            <img src="Props/prop-4.png" alt="" class="prop-img">
+            <img src="Props/prop-5.png" alt="" class="prop-img">
+            <img src="Props/prop-6.png" alt="" class="prop-img">
+            <img src="Props/prop-7.png" alt="" class="prop-img">
+            <!-- Duplicate set for seamless loop -->
+            <img src="Props/prop-1.png" alt="" class="prop-img">
+            <img src="Props/prop-2.png" alt="" class="prop-img">
+            <img src="Props/prop-3.png" alt="" class="prop-img">
+            <img src="Props/prop-4.png" alt="" class="prop-img">
+            <img src="Props/prop-5.png" alt="" class="prop-img">
+            <img src="Props/prop-6.png" alt="" class="prop-img">
+            <img src="Props/prop-7.png" alt="" class="prop-img">
+          </div>
+        </div>
+
+        <div class="mkt-inner">
+          <div class="any-condition-pills reveal">
+            <span class="ac-pill">Fire &amp; Flood Damage</span>
+            <span class="ac-pill">Structural Issues</span>
+            <span class="ac-pill">Overwhelmed Estates</span>
+            <span class="ac-pill">Code Violations</span>
+            <span class="ac-pill">Tenant Occupied</span>
+            <span class="ac-pill">Mold &amp; Water Damage</span>
+            <span class="ac-pill">Deferred Maintenance</span>
+            <span class="ac-pill">Inherited Properties</span>
+            <span class="ac-pill">Foreclosure</span>
+            <span class="ac-pill">Late on Taxes</span>
+          </div>
+          <div class="section-cta reveal">
+            <button class="btn-primary" id="btn-condition-cta">
+              Get My Cash Offer
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
