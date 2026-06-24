@@ -438,6 +438,8 @@ els.btnSubmit.addEventListener('click', async () => {
 
   try {
     await submitForm(payload);
+    // Google Ads conversion — Seller Lead Form Submission
+    gtag('event', 'conversion', { send_to: 'AW-16832581516/29IBCNnXxMQcEIyfs9o-' });
     goToStep(5);
   } catch (err) {
     console.error('[Story Homes] Submission error:', err);
