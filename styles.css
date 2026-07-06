@@ -1768,6 +1768,16 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
    Honeypot (bot trap)
    ═══════════════════════════════════════════════ */
 
+/* Hide GHL chat widget on mobile */
+@media (max-width: 768px) {
+  #chat-widget-container,
+  [data-widget-id="69ea65f402b0b92f7c9ab102"],
+  .chat-widget-launcher,
+  #leadconnector-chat-widget {
+    display: none !important;
+  }
+}
+
 .hp-field {
   position: absolute;
   left: -9999px;
