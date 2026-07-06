@@ -1024,5 +1024,34 @@ document.getElementById('consent').addEventListener('change', function () {
   });
 })();
 
+/* ─── Hide GHL chat widget on mobile ─── */
+(function hideWidgetOnMobile() {
+  if (window.innerWidth > 768) return;
+
+  function hideWidget() {
+    // Target element-based selectors
+    document.querySelectorAll(
+      '#chat-widget-container, #leadconnector-chat-widget, [id*="chat-widget"], [class*="chat-widget"], [id*="leadconnector"], [data-widget-id]'
+    ).forEach(el => { el.style.setProperty('display', 'none', 'important'); });
+
+    // Target iframes injected by GHL/LeadConnector
+    document.querySelectorAll('iframe').forEach(iframe => {
+      const src = iframe.src || iframe.getAttribute('src') || '';
+      if (src.includes('leadconnector') || src.includes('chat-widget') || src.includes('msgsndr')) {
+        const wrapper = iframe.parentElement;
+        if (wrapper && wrapper !== document.body) {
+          wrapper.style.setProperty('display', 'none', 'important');
+        }
+        iframe.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }
+
+  hideWidget();
+
+  const observer = new MutationObserver(hideWidget);
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
+
 /* ─── Init ─── */
 updateProgress(1);
