@@ -615,6 +615,17 @@ els.btnSubmit.addEventListener('click', async () => {
   });
 });
 
+/* ─── Skip hero video on mobile (saves ~3.4MB download) ─── */
+(function initHeroVideoMobile() {
+  const video = document.getElementById('hero-video');
+  if (!video) return;
+  if (window.innerWidth <= 768) {
+    video.removeAttribute('autoplay');
+    video.querySelectorAll('source').forEach(s => s.removeAttribute('src'));
+    video.load();
+  }
+})();
+
 /* ─── Hero Video Fade-in ───
    Uses WAAPI (same as the rotating word) to bypass the global CSS
    transition rule that would otherwise override opacity animation. */
