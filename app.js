@@ -676,13 +676,14 @@ els.btnSubmit.addEventListener('click', async () => {
     el.textContent = words[0];
   }
 
-  calibrateWidth();
+  // Defer calibration to after first paint so it doesn't block render
+  requestAnimationFrame(calibrateWidth);
 
   // Re-calibrate on resize since the font size is viewport-relative (clamp + vw).
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(calibrateWidth, 150);
+    resizeTimer = setTimeout(() => requestAnimationFrame(calibrateWidth), 150);
   });
 
   async function rotate() {

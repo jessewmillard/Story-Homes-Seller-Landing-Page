@@ -11,9 +11,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" />
+  </noscript>
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -793,7 +797,7 @@
               <video
                 class="local-video"
                 src="new test.mp4"
-                poster="poster-testimonial.jpg"
+                poster="poster-testimonial.webp"
                 controls
                 preload="none"
                 playsinline
@@ -804,7 +808,7 @@
               <video
                 class="local-video"
                 src="Seller - Ad 8_1.mp4"
-                poster="poster-ad8.jpg"
+                poster="poster-ad8.webp"
                 controls
                 preload="none"
                 playsinline
@@ -1431,10 +1435,15 @@
 
   <script src="app.js"></script>
 
-  <!-- GHL Chat Widget -->
-  <script src="https://widgets.leadconnectorhq.com/loader.js"
-    data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-    data-widget-id="69ea65f402b0b92f7c9ab102">
+  <!-- GHL Chat Widget — desktop only -->
+  <script>
+    if (window.innerWidth > 768) {
+      var s = document.createElement('script');
+      s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+      s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+      s.setAttribute('data-widget-id', '69ea65f402b0b92f7c9ab102');
+      document.body.appendChild(s);
+    }
   </script>
 </body>
 
