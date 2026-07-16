@@ -617,6 +617,28 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
   .hero-cta-row { flex-direction: column; align-items: flex-start; }
 }
 
+.hero-trust-badges {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+}
+.bbb-badge {
+  height: 70px;
+  width: auto;
+  /* dark mode: olive #8C9965 */
+  filter: brightness(0) saturate(100%) invert(62%) sepia(14%) saturate(528%) hue-rotate(48deg) brightness(96%) drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  opacity: 0.92;
+  transition: opacity 0.2s;
+}
+.bbb-badge:hover { opacity: 1; }
+[data-theme="light"] .bbb-badge {
+  /* light mode: forest #5C6D62 */
+  filter: brightness(0) saturate(100%) invert(39%) sepia(12%) saturate(350%) hue-rotate(108deg) brightness(82%) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
 .micro-trust {
   font-size: 12px;
   color: var(--text-muted);
