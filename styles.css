@@ -639,6 +639,27 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
   filter: brightness(0) saturate(100%) invert(39%) sepia(12%) saturate(350%) hue-rotate(108deg) brightness(82%) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
+/* Footer BBB — mobile only */
+.footer-bbb {
+  display: none;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.bbb-badge--footer {
+  height: 60px;
+  filter: brightness(0) saturate(100%) invert(62%) sepia(14%) saturate(528%) hue-rotate(48deg) brightness(96%);
+  opacity: 0.9;
+  drop-shadow: none;
+}
+[data-theme="light"] .bbb-badge--footer {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(12%) saturate(350%) hue-rotate(108deg) brightness(82%);
+}
+
+@media (max-width: 768px) {
+  .hero-trust-badges { display: none; }
+  .footer-bbb { display: flex; }
+}
+
 .micro-trust {
   font-size: 12px;
   color: var(--text-muted);
