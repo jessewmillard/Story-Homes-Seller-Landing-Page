@@ -2270,6 +2270,14 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
 }
 .btn-call-cta svg { flex-shrink: 0; }
 
+/* Desktop shows the dialable number (a desktop user may need to read it and
+   dial from a phone); mobile shows "Call Now" since tapping dials directly. */
+.call-label-mobile { display: none; }
+@media (max-width: 768px) {
+  .call-label-desktop { display: none; }
+  .call-label-mobile { display: inline; }
+}
+
 /* Full-width, stacked in the form step-nav */
 .step-nav--call {
   flex-direction: column;
