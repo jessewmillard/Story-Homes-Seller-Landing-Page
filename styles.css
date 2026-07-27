@@ -1607,8 +1607,21 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
 /* ── Section CTA (comparison + process) ── */
 .section-cta {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
   margin-top: clamp(36px, 5vw, 52px);
+}
+@media (max-width: 600px) {
+  .section-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .section-cta .btn-primary,
+  .section-cta .btn-call-cta { width: 100%; justify-content: center; }
 }
 
 /* ── Credibility grid inside process section ── */
@@ -2178,5 +2191,129 @@ body *:not(.step):not(.check-svg *):not(.check-ring):not(.check-mark) {
 @media (max-width: 480px) {
   .modal-header { padding: 20px 20px 14px; }
   .modal-body { padding: 18px 20px 24px; }
+}
+
+/* ── Call Button (Header — desktop) ── */
+.btn-call-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+  text-decoration: none;
+  border: 2px solid var(--accent);
+  border-radius: 99px;
+  /* 12px + 2px border = 14px, and line-height reset so this <a> matches
+     the <button> .btn-header-cta exactly (see .btn-call-cta note). */
+  line-height: normal;
+  padding: 12px 26px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.btn-call-header:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.app-header.on-hero .btn-call-header {
+  color: rgba(246,241,236,0.85);
+  border-color: rgba(246,241,236,0.35);
+}
+.app-header.on-hero .btn-call-header:hover {
+  background: rgba(246,241,236,0.12);
+  color: #fff;
+  border-color: rgba(246,241,236,0.6);
+}
+[data-theme="light"] .app-header.on-hero .btn-call-header {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+[data-theme="light"] .app-header.on-hero .btn-call-header:hover {
+  background: var(--accent);
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .btn-call-header { display: none; }
+}
+
+/* ── Call CTA Button ──
+   Matches .btn-primary height exactly: padding is 2px less per axis so the
+   2px border makes up the difference, and line-height must be reset to
+   `normal` because <a> otherwise inherits body's 1.6 (which <button> does
+   not) and would render ~5.5px taller. */
+.btn-call-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: normal;
+  padding: 12px 26px;
+  border-radius: 99px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.btn-call-cta:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-call-cta svg { flex-shrink: 0; }
+
+/* Full-width, stacked in the form step-nav */
+.step-nav--call {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+}
+.step-nav--call .btn-call-cta,
+.step-nav--call .btn-primary { width: 100%; justify-content: center; }
+
+/* ── Mobile Fixed Call Bar ── */
+.mobile-call-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 950;
+  padding: 10px 16px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  background: #fff;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+.mobile-call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-radius: 99px;
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease);
+}
+.mobile-call-btn:hover { background: var(--accent-hover); }
+@media (max-width: 768px) {
+  .mobile-call-bar { display: block; }
+  /* Push page content above the bar */
+  .app-shell { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
 }
 

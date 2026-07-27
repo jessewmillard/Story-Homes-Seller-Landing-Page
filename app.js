@@ -69,7 +69,7 @@ const els = {
 
 /* ─── Theme ─── */
 function getTheme() {
-  return localStorage.getItem('sh-theme') || 'dark';
+  return localStorage.getItem('sh-theme') || 'light';
 }
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
